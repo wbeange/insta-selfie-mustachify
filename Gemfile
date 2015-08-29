@@ -12,15 +12,16 @@ gem 'sinatra-config-file'
 gem 'puma'
 gem 'tux'
 
+gem 'pry'
+gem 'shotgun'
+
 group :development, :test do
-  gem 'pry'
-  gem 'shotgun'
   gem 'sqlite3'
 end
 
-# group :production do
-#   gem 'pg'
-# end
+group :production do
+  gem 'pg'
+end
 
 gem 'instagram'
 gem 'rekognize'
