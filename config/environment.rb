@@ -27,14 +27,6 @@ configure do
   set :views, File.join(Sinatra::Application.root, "app", "views")
 end
 
-# configure :development do
-#   DataMapper.setup(:default, "sqlite3://#{Dir.pwd}/development.db")
-# end
-
-# configure :production do
-#   DataMapper.setup(:default, ENV['HEROKU_POSTGRESQL_RED_URL'])
-# end
-
 enable :sessions
 
 # instagram-ruby-gem configuration
