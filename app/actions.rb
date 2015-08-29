@@ -26,9 +26,3 @@ get "/selfie" do
 
   erb :selfie
 end
-
-# <img src='<%= @media_item.images.thumbnail.url %>'>
-
-# <div style="padding-top: 20px;">
-#   <%= @media_item %>
-# </div>
