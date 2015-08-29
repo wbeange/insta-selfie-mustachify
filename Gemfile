@@ -6,7 +6,7 @@ gem 'activesupport'
 
 gem 'sinatra'
 gem 'sinatra-contrib'
-gem 'sinatra-activerecord'
+# gem 'sinatra-activerecord'
 
 gem 'puma'
 gem 'tux'
