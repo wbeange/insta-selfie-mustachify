@@ -15,13 +15,20 @@ get "/oauth/callback" do
 end
 
 get "/selfie" do
-  client = Instagram.client(:access_token => session[:access_token])
+  instagram_client = Instagram.client(:access_token => session[:access_token])
+  rekognize_client = Rekognize::Client::Base.new(api_key: REKOGNIZE_CLIENT_ID, api_secret: REKOGNIZE_CLIENT_SECRET)
 
-  tags = client.tag_search('selfie')
-
-  media = client.tag_recent_media(tags.first.name)
-
+  tags = instagram_client.tag_search('selfie')
+  media = instagram_client.tag_recent_media(tags.first.name)
   @media_item = media.first
+
+  @result = rekognize_client.face_detect(urls: "#{@media_item.images.standard_resolution.url}/base64", jobs: 'face_detect_part')
 
   erb :selfie
 end
+
+# <img src='<%= @media_item.images.thumbnail.url %>'>
+
+# <div style="padding-top: 20px;">
+#   <%= @media_item %>
+# </div>
