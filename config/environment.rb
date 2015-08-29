@@ -5,7 +5,7 @@ require 'active_support/all'
 
 # Load Sinatra Framework (with AR)
 require 'sinatra'
-# require 'sinatra/activerecord'
+require 'sinatra/activerecord'
 require 'sinatra/contrib/all' # Requires cookies, among other things
 
 require 'pry'
@@ -44,9 +44,7 @@ REKOGNIZE_CLIENT_ID = "aupQnDmqKeJAINIk"
 REKOGNIZE_CLIENT_SECRET = "iCElJemma1ifWkFa"
 
 # Set up the database and models
-# require APP_ROOT.join('config', 'database')
+require APP_ROOT.join('config', 'database')
 
 # Load the routes / actions
 require APP_ROOT.join('app', 'actions')
-
-
