@@ -30,8 +30,6 @@ end
 
 config_file 'config/config.yml'
 
-enable :sessions
-
 Instagram.configure do |config|
   config.client_id = settings.instagram_client_id
   config.client_secret = settings.instagram_client_secret
