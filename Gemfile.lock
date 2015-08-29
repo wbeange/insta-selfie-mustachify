@@ -90,6 +90,8 @@ GEM
     sinatra-activerecord (2.0.8)
       activerecord (>= 3.2)
       sinatra (~> 1.0)
+    sinatra-config-file (1.0)
+      sinatra-contrib
     sinatra-contrib (1.4.6)
       backports (>= 2.0)
       multi_json
@@ -125,6 +127,7 @@ DEPENDENCIES
   shotgun
   sinatra
   sinatra-activerecord
+  sinatra-config-file
   sinatra-contrib
   sqlite3
   tux

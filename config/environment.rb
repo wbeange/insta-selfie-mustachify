@@ -7,6 +7,7 @@ require 'active_support/all'
 require 'sinatra'
 require 'sinatra/activerecord'
 require 'sinatra/contrib/all' # Requires cookies, among other things
+require "sinatra/config_file"
 
 require 'pry'
 
@@ -27,21 +28,14 @@ configure do
   set :views, File.join(Sinatra::Application.root, "app", "views")
 end
 
+config_file 'config/config.yml'
+
 enable :sessions
 
-# instagram-ruby-gem configuration
-CALLBACK_URL = "http://localhost:3001/oauth/callback"
-INSTAGRAM_CLIENT_ID = "d119273d693948dea278436882eb2536"
-INSTAGRAM_CLIENT_SECRET = "e20f05e3f1eb45a9bd82d1db9ddf97e8"
-
 Instagram.configure do |config|
-  config.client_id = INSTAGRAM_CLIENT_ID
-  config.client_secret = INSTAGRAM_CLIENT_SECRET
+  config.client_id = settings.instagram_client_id
+  config.client_secret = settings.instagram_client_secret
 end
-
-# ruby-rekognize configuration
-REKOGNIZE_CLIENT_ID = "aupQnDmqKeJAINIk"
-REKOGNIZE_CLIENT_SECRET = "iCElJemma1ifWkFa"
 
 # Set up the database and models
 require APP_ROOT.join('config', 'database')
