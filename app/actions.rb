@@ -7,7 +7,12 @@ get '/' do
   media = instagram_client.tag_recent_media(tags.first.name)
   @media_item = media.first
 
-  @result = rekognize_client.face_detect(urls: "#{@media_item.images.standard_resolution.url}/base64", jobs: 'face_detect_part')
+  urls = "#{@media_item.images.standard_resolution.url}/base64"
+
+  @result = rekognize_client.face_detect(urls: urls, jobs: 'face_detect_part')
+
+  @canvasWidth = @result['ori_img_size']['width']
+  @canvasHeight = @result['ori_img_size']['height']
 
   erb :index
 end
