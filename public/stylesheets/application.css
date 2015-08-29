@@ -11,3 +11,9 @@
     width: 400px !important;
   }
 }
+
+@media only screen and (max-width: 400px) {
+  .mobile-canvas-width {
+    width: 300px !important;
+  }
+}
