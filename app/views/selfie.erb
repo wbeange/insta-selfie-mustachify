@@ -1,11 +1,11 @@
 <% if @result['face_detection'].length == 0 %>
-  <div>No moustaches found :(.</div>
+  <div>No vain, no gain.</div>
 <% end %>
 
 <% if @result['face_detection'].length > 0 %>
   <% @result['face_detection'].each_with_index do |face, index| %>
     <div>
-      Moustache <%= index + 1 %> confidence: <%= face['confidence'].to_i * 100 %>%
+      Moustache <%= index + 1 %> Confidence <%= face['confidence'].to_f * 100 %>%
     </div>
   <% end %>
 <% end %>
