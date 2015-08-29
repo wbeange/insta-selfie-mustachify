@@ -6,6 +6,10 @@
   // json dump
   var data = <%= @result.to_json %>;
 
+  console.log('really?', data);
+
+  // instagram faces with mustaches
+
   // html5 canvas
   var canvas = document.getElementById('myCanvas');
   var context = canvas.getContext('2d');
@@ -37,7 +41,7 @@
       // mustache should be proportional to the face
       var mustacheImageWidth = 600;
       var mustacheImageHeight = 152;
-      var faceProportion = 0.8;
+      var faceProportion = 0.65;
       var mustacheWidth = faceSizeWidth * faceProportion;
       var mustacheHeight = faceSizeWidth / ( mustacheImageWidth / mustacheImageHeight);
 
