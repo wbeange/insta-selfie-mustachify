@@ -45,6 +45,7 @@ REKOGNIZE_CLIENT_SECRET = "iCElJemma1ifWkFa"
 
 # Set up the database and models
 # require APP_ROOT.join('config', 'database')
+require APP_ROOT.join('config')
 
 # Load the routes / actions
 require APP_ROOT.join('app', 'actions')
