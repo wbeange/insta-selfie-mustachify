@@ -1,7 +1,3 @@
-# source "https://rubygems.org"
-# ruby "2.0.0"
-# gem 'sinatra', '2.0.0 '
-
 require 'rubygems'
 require 'bundler/setup'
 
@@ -30,6 +26,14 @@ configure do
 
   set :views, File.join(Sinatra::Application.root, "app", "views")
 end
+
+# configure :development do
+#   DataMapper.setup(:default, "sqlite3://#{Dir.pwd}/development.db")
+# end
+
+# configure :production do
+#   DataMapper.setup(:default, ENV['HEROKU_POSTGRESQL_RED_URL'])
+# end
 
 enable :sessions
 

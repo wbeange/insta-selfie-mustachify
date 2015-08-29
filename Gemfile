@@ -14,8 +14,12 @@ gem 'tux'
 group :development, :test do
   gem 'pry'
   gem 'shotgun'
-  gem 'sqlite3'
+  # gem 'sqlite3'
 end
 
 gem 'instagram'
 gem 'rekognize'
+
+# group :production do
+#   gem 'pg'
+# end
