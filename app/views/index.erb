@@ -1,41 +1,41 @@
-<div style="padding-top:20px;">
-  <div style="display:inline-block; vertical-align:top; padding-right:10px;">
-    <h1 style="margin-top:0px; margin-bottom:0px;">Grab a Selfie</h1>
-    <h2 style="margin-top: 0px; margin-bottom:0px;">Throw on a Moustache</h2>
-  </div>
+<div style="background:brown; opacity:0.98;">
+  <div class="my-container">
+    <div style="padding-top:20px;">
+      <div style="display:inline-block; vertical-align:top; padding-right:10px;">
+        <h1 style="margin-top:0px; margin-bottom:0px;">Grab a Selfie</h1>
+        <h2 style="margin-top: 0px; margin-bottom:0px;">Throw on a Moustache</h2>
+      </div>
 
-  <div style="display:inline-block; vertical-align:top;">
-    <div style="padding-top:10px;">
-      <a href="/">
-        <button type="button" class="btn btn-default">Beer Me!</button>
-      </a>
+      <div style="display:inline-block; vertical-align:top;">
+        <div style="padding-top:10px;">
+          <a href="/">
+            <button type="button" class="btn btn-default">Beer Me!</button>
+          </a>
+        </div>
+      </div>
     </div>
+
+    <!-- conditional result logic -->
+
+    <% if @result['face_detection'].length == 0 %>
+      <div style="padding-top:10px;">No vain, no gain.</div>
+    <% end %>
+
+    <% if @result['face_detection'].length > 0 %>
+      <div style="padding-top:10px;">
+      <% @result['face_detection'].each_with_index do |face, index| %>
+        <div>Moustache <%= index + 1 %> Confidence <%= face['confidence'].to_f * 100 %>%</div>
+      <% end %>
+      </div>
+    <% end %>
   </div>
 </div>
 
-<% if @result['face_detection'].length == 0 %>
-  <div style="padding-top:10px;">No vain, no gain.</div>
-<% end %>
-
-<% if @result['face_detection'].length > 0 %>
-  <div style="padding-top:10px;">
-  <% @result['face_detection'].each_with_index do |face, index| %>
-    <div>
-      Moustache <%= index + 1 %> Confidence <%= face['confidence'].to_f * 100 %>%
-    </div>
-  <% end %>
-  </div>
-<% end %>
-
-<div style="vertical-align: center; padding-top: 10px;">
+<div class="my-container" style="vertical-align: center;">
   <canvas id="myCanvas" class="mobile-canvas-width" width="<%= @canvasWidth %>" height="<%= @canvasHeight %>">
     <!-- fun things happen here -->
   </canvas>
 </div>
 
-<script>
-  // json dump
-  var data = <%= @result.to_json %>;
-</script>
-
+<script> var data = <%= @result.to_json %>; // json dump </script>
 <script src="/javascript/drawmoustache.js"></script>
