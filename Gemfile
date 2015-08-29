@@ -6,7 +6,6 @@ gem 'activesupport'
 
 gem 'sinatra'
 gem 'sinatra-contrib'
-# gem 'sinatra-activerecord'
 
 gem 'puma'
 gem 'tux'
@@ -14,12 +13,7 @@ gem 'tux'
 group :development, :test do
   gem 'pry'
   gem 'shotgun'
-  # gem 'sqlite3'
 end
 
 gem 'instagram'
 gem 'rekognize'
-
-# group :production do
-#   gem 'pg'
-# end
