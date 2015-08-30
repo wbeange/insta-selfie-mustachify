@@ -1,4 +1,4 @@
-<div style="background:brown; opacity:0.98;">
+<div style="background:brown; opacity:0.99;">
   <div class="my-container">
     <div>
       <div style="display:inline-block; vertical-align:top; padding-right:10px;">
@@ -24,7 +24,7 @@
     <% if @result['face_detection'].length > 0 %>
       <div style="padding-top:10px;">
       <% @result['face_detection'].each_with_index do |face, index| %>
-        <div>Moustache <%= index + 1 %> Confidence <%= face['confidence'].to_f * 100 %>%</div>
+        <div>Moustache <%= index + 1 %> Confidence <%= ( face['confidence'].to_f * 100 ).round(2) %>%</div>
       <% end %>
       </div>
     <% end %>
