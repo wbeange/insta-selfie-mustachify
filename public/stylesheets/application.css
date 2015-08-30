@@ -3,6 +3,7 @@ body {
 }
 
 .my-container {
+  padding-top: 5px;
   padding-bottom: 10px;
   margin-left: auto;
   margin-right: auto;
@@ -19,5 +20,9 @@ body {
 @media only screen and (max-width: 400px) {
   .mobile-canvas-width {
     width: 300px !important;
+  }
+
+  .my-container {
+    padding-left: 5px;
   }
 }
