@@ -1,10 +1,13 @@
-Sinatra
+Instagram Selfie Tag Mustachifier
 =============
 
-Brought to you by Lighthouse Labs
+This web app takes the latest #selfie photo from Instagram and throws a moustache on it.
 
-## Getting Started
+https://mustachifymeplease.herokuapp.com
 
-1. `bundle install`
-2. `shotgun -p 3000 -o 0.0.0.0`
-3. Visit `http://localhost:3000/` in your browser
+## Technologies Used
+
+- Ruby Sinatra
+- HTML5 Canvas
+- The Instagram API and the Orbeus ReKognition API
+- Hosted on Heroku
